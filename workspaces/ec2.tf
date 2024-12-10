@@ -3,6 +3,6 @@ resource "aws_instance" "terraform" {
     vpc_security_group_ids = ["sg-0996d6bc9e1352780"]
     instance_type = lookup(var.instance_type, terraform.workspace)
     tags = {
-        Name = "terraform"
+        Name = "terraform-${terraform.workspace}"
     }
 }
